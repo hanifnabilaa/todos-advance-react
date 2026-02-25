@@ -7,10 +7,10 @@ import {
   toggleTodo,
   removeTodo,
 } from "./features/todos/todoSlice";
-import { Header } from "./components/Header";
-import { Button } from "./components/Button";
-import { Input } from "./components/Input";
-import { TodoItem } from "./components/TodoItem";
+import { Header } from "./components/Header/Header";
+import { Button } from "./components/Button/Button";
+import { Input } from "./components/Input/Input";
+import { TodoItem } from "./components/TodoItem/TodoItem";
 import { EmptyState } from "./components/EmptyState";
 
 const ITEMS_PER_PAGE = 5;
