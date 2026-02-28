@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Komponen Header testing snapshot saat Dark Mode 1`] = `
+<DocumentFragment>
+  <header
+    class="bg-gray-200 dark:bg-[#0D0D0D] h-[200px] flex items-center justify-center w-full relative transition-colors duration-200"
+  >
+    <div
+      class="flex items-center gap-3"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-rocket text-[#4EA8DE] mt-1"
+        fill="none"
+        height="32"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"
+        />
+        <path
+          d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"
+        />
+        <path
+          d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"
+        />
+        <path
+          d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"
+        />
+      </svg>
+      <h1
+        class="text-4xl font-black"
+      >
+        <span
+          class="text-[#4EA8DE]"
+        >
+          to
+        </span>
+        <span
+          class="text-[#5E60CE]"
+        >
+          do
+        </span>
+      </h1>
+    </div>
+    <button
+      aria-label="Toggle Dark Mode"
+      class="absolute top-6 right-6 p-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-sun text-[#F2F2F2]"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+        />
+        <path
+          d="M12 2v2"
+        />
+        <path
+          d="M12 20v2"
+        />
+        <path
+          d="m4.93 4.93 1.41 1.41"
+        />
+        <path
+          d="m17.66 17.66 1.41 1.41"
+        />
+        <path
+          d="M2 12h2"
+        />
+        <path
+          d="M20 12h2"
+        />
+        <path
+          d="m6.34 17.66-1.41 1.41"
+        />
+        <path
+          d="m19.07 4.93-1.41 1.41"
+        />
+      </svg>
+    </button>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Komponen Header testing snapshot saat Light Mode 1`] = `
+<DocumentFragment>
+  <header
+    class="bg-gray-200 dark:bg-[#0D0D0D] h-[200px] flex items-center justify-center w-full relative transition-colors duration-200"
+  >
+    <div
+      class="flex items-center gap-3"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-rocket text-[#4EA8DE] mt-1"
+        fill="none"
+        height="32"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"
+        />
+        <path
+          d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"
+        />
+        <path
+          d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"
+        />
+        <path
+          d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"
+        />
+      </svg>
+      <h1
+        class="text-4xl font-black"
+      >
+        <span
+          class="text-[#4EA8DE]"
+        >
+          to
+        </span>
+        <span
+          class="text-[#5E60CE]"
+        >
+          do
+        </span>
+      </h1>
+    </div>
+    <button
+      aria-label="Toggle Dark Mode"
+      class="absolute top-6 right-6 p-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-moon text-[#1A1A1A]"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+        />
+      </svg>
+    </button>
+  </header>
+</DocumentFragment>
+`;

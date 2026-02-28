@@ -30,4 +30,29 @@ describe("Komponen Input", () => {
 
     expect(mockOnChange).toHaveBeenCalledTimes(4);
   });
+
+  it("testing snapshot pada keadaan default", () => {
+    const { asFragment } = render(
+      <Input
+        value=""
+        onChange={jest.fn()}
+        placeholder="Tambah tugas baru..."
+      />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("testing snapshot saat memiliki teks dan custom class", () => {
+    const { asFragment } = render(
+      <Input
+        value="Belajar Snapshot"
+        onChange={jest.fn()}
+        placeholder="Tambah tugas baru..."
+        className="margin-top-10 border-red-500"
+      />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

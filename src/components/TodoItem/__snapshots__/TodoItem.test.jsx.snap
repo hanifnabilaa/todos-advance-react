@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Komponen TodoItem testing snapshot saat tugas BELUM selesai 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-start gap-3 p-4 rounded-lg mb-3 shadow-sm transition-colors bg-white dark:bg-[#262626] border border-gray-300 dark:border-[#333333]"
+  >
+    <button
+      class="mt-0.5 shrink-0"
+      type="button"
+    >
+      <div
+        class="w-5 h-5 rounded-full border-2 border-[#4EA8DE] cursor-pointer"
+      />
+    </button>
+    <span
+      class="flex-1 text-sm leading-tight mt-0.5 transition-colors text-gray-700 dark:text-[#F2F2F2]"
+    >
+      Beli Susu
+    </span>
+    <button
+      class="text-gray-400 hover:text-gray-600 dark:hover:text-[#F2F2F2] transition-colors shrink-0"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-trash2 lucide-trash-2"
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 11v6"
+        />
+        <path
+          d="M14 11v6"
+        />
+        <path
+          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"
+        />
+        <path
+          d="M3 6h18"
+        />
+        <path
+          d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Komponen TodoItem testing snapshot saat tugas SUDAH selesai 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-start gap-3 p-4 rounded-lg mb-3 shadow-sm transition-colors bg-gray-100 dark:bg-[#262626] border border-transparent dark:border-transparent"
+  >
+    <button
+      class="mt-0.5 shrink-0"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-circle-check text-[#5E60CE]"
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <path
+          d="m9 12 2 2 4-4"
+        />
+      </svg>
+    </button>
+    <span
+      class="flex-1 text-sm leading-tight mt-0.5 transition-colors text-gray-400 dark:text-[#808080] line-through"
+    >
+      Belajar React
+    </span>
+    <button
+      class="text-gray-400 hover:text-gray-600 dark:hover:text-[#F2F2F2] transition-colors shrink-0"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-trash2 lucide-trash-2"
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 11v6"
+        />
+        <path
+          d="M14 11v6"
+        />
+        <path
+          d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"
+        />
+        <path
+          d="M3 6h18"
+        />
+        <path
+          d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;

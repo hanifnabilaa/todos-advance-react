@@ -54,4 +54,20 @@ describe("Komponen Header", () => {
       screen.getByRole("button", { name: /toggle dark mode/i }),
     ).toBeInTheDocument();
   });
+
+  it("testing snapshot saat Light Mode", () => {
+    const { asFragment } = render(
+      <Header isDarkMode={false} toggleDarkMode={jest.fn()} />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("testing snapshot saat Dark Mode", () => {
+    const { asFragment } = render(
+      <Header isDarkMode={true} toggleDarkMode={jest.fn()} />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

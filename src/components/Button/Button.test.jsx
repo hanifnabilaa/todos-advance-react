@@ -13,3 +13,9 @@ test("memanggil fungsi onClick saat button diklik", () => {
 
   expect(mockOnClick).toHaveBeenCalledTimes(1);
 });
+
+test("testing snapshot secara visual", () => {
+  const { asFragment } = render(<Button>Simpan</Button>);
+
+  expect(asFragment()).toMatchSnapshot();
+});

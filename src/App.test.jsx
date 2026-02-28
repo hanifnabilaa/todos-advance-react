@@ -80,4 +80,17 @@ describe("Komponen Utama App (Integration Test)", () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(addTodo("Tugas Baru dari Jest"));
   });
+
+  it("testing snapshot saat merender daftar tugas", () => {
+    const mockStaticTodos = [
+      { id: 101, title: "Belajar Snapshot", completed: false },
+      { id: 102, title: "Bikin Kopi", completed: true },
+    ];
+
+    useSelector.mockReturnValue({ items: mockStaticTodos, loading: false });
+
+    const { asFragment } = render(<App />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

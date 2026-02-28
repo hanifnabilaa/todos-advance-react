@@ -97,4 +97,32 @@ describe("Komponen TodoItem", () => {
     expect(mockOnDelete).toHaveBeenCalledTimes(1);
     expect(mockOnDelete).toHaveBeenCalledWith(42);
   });
+
+  it("testing snapshot saat tugas BELUM selesai", () => {
+    const { asFragment } = render(
+      <TodoItem
+        id={1}
+        title="Beli Susu"
+        completed={false}
+        onToggle={jest.fn()}
+        onDelete={jest.fn()}
+      />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("testing snapshot saat tugas SUDAH selesai", () => {
+    const { asFragment } = render(
+      <TodoItem
+        id={2}
+        title="Belajar React"
+        completed={true}
+        onToggle={jest.fn()}
+        onDelete={jest.fn()}
+      />,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

@@ -19,4 +19,10 @@ describe("Komponen EmptyState", () => {
 
     expect(titleElement).toHaveClass("font-bold");
   });
+
+  it("testing cocok dengan snapshot", () => {
+    const { asFragment } = render(<EmptyState />);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

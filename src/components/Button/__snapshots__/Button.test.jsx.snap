@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`testing snapshot secara visual 1`] = `
+<DocumentFragment>
+  <button
+    class="bg-[#1E6F9F] hover:bg-[#1A618B] text-white flex items-center justify-center gap-2 px-4 py-4 rounded-lg font-semibold text-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed leading-none shadow-sm "
+    type="button"
+  >
+    Simpan
+  </button>
+</DocumentFragment>
+`;
