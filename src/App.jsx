@@ -1,4 +1,11 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+  useMemo,
+  useCallback,
+  lazy,
+  Suspense,
+} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CirclePlus } from "lucide-react";
 import {
@@ -11,7 +18,12 @@ import { Header } from "./components/Header/Header";
 import { Button } from "./components/Button/Button";
 import { Input } from "./components/Input/Input";
 import { TodoItem } from "./components/TodoItem/TodoItem";
-import { EmptyState } from "./components/EmptyState";
+
+const EmptyState = lazy(() =>
+  import("./components/EmptyState").then((module) => ({
+    default: module.EmptyState,
+  })),
+);
 
 const ITEMS_PER_PAGE = 5;
 
@@ -25,44 +37,70 @@ function App() {
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentTodos = todos.slice(startIndex, endIndex);
-  const totalPages = Math.ceil(todos.length / ITEMS_PER_PAGE);
+  const currentTodos = useMemo(
+    () => todos.slice(startIndex, endIndex),
+    [todos, startIndex, endIndex],
+  );
+  const totalPages = useMemo(
+    () => Math.ceil(todos.length / ITEMS_PER_PAGE),
+    [todos.length],
+  );
 
   useEffect(() => {
     dispatch(fetchTodos());
   }, [dispatch]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!newTodo.trim()) return;
-    dispatch(addTodo(newTodo));
-    setNewTodo("");
-  };
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (!newTodo.trim()) return;
+      dispatch(addTodo(newTodo));
+      setNewTodo("");
+    },
+    [dispatch, newTodo],
+  );
 
-  const handleToggle = (id) => {
-    dispatch(toggleTodo(id));
-  };
+  const handleToggle = useCallback(
+    (id) => {
+      dispatch(toggleTodo(id));
+    },
+    [dispatch],
+  );
 
-  const handleDelete = (id) => {
-    dispatch(removeTodo(id));
-  };
+  const handleDelete = useCallback(
+    (id) => {
+      dispatch(removeTodo(id));
+    },
+    [dispatch],
+  );
 
-  const completedCount = todos.filter((todo) => todo.completed).length;
+  const completedCount = useMemo(
+    () => todos.filter((todo) => todo.completed).length,
+    [todos],
+  );
+
+  const toggleDarkMode = useCallback(() => setIsDarkMode((prev) => !prev), []);
+  const handleInputChange = useCallback((e) => setNewTodo(e.target.value), []);
+  const handlePrevPage = useCallback(
+    () => setCurrentPage((prev) => prev - 1),
+    [],
+  );
+  const handleNextPage = useCallback(
+    () => setCurrentPage((prev) => prev + 1),
+    [],
+  );
 
   return (
     <div className={isDarkMode ? "dark" : ""}>
       <div className="min-h-screen bg-[#F3F4F6] dark:bg-[#1A1A1A] flex flex-col items-center pb-20 font-sans transition-colors duration-200">
-        <Header
-          isDarkMode={isDarkMode}
-          toggleDarkMode={() => setIsDarkMode(!isDarkMode)}
-        />
+        <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
 
         <main className="w-full max-w-[736px] px-4 -mt-7 shrink-0 relative z-10">
           <form onSubmit={handleSubmit} className="flex gap-2">
             <Input
               placeholder="Tambah tugas baru"
               value={newTodo}
-              onChange={(e) => setNewTodo(e.target.value)}
+              onChange={handleInputChange}
             />
             <Button type="submit">
               Tambah
@@ -91,7 +129,9 @@ function App() {
 
           <div>
             {todos.length === 0 && !loading ? (
-              <EmptyState />
+              <Suspense fallback={null}>
+                <EmptyState />
+              </Suspense>
             ) : (
               currentTodos.map((todo) => (
                 <TodoItem
@@ -120,7 +160,7 @@ function App() {
               <div className="flex gap-2">
                 <button
                   type="button"
-                  onClick={() => setCurrentPage((prev) => prev - 1)}
+                  onClick={handlePrevPage}
                   disabled={currentPage === 1}
                   className="bg-gray-200 dark:bg-[#262626] hover:bg-gray-300 dark:hover:bg-[#333333] text-gray-700 dark:text-[#F2F2F2] px-3 py-1.5 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium"
                 >
@@ -128,7 +168,7 @@ function App() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setCurrentPage((prev) => prev + 1)}
+                  onClick={handleNextPage}
                   disabled={currentPage === totalPages}
                   className="bg-gray-200 dark:bg-[#262626] hover:bg-gray-300 dark:hover:bg-[#333333] text-gray-700 dark:text-[#F2F2F2] px-3 py-1.5 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium"
                 >

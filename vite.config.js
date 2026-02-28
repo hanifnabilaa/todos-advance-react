@@ -38,8 +38,13 @@ export default defineConfig({
     })
   ],
   server: {
-    port: 8001,
+    port: 8002,
     open: true,
-    allowedHosts: true
+    allowedHosts: true,
+    strictPort: true,
+  },
+  preview: {
+    port: 8002,
+    strictPort: true,
   },
 })
